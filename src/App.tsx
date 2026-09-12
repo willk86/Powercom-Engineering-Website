@@ -14,7 +14,8 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation children={undefined} />
-      <Routes>
+      <main className="pt-20">
+        <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/etudes" element={<Etudes />} />
         <Route path="/controle" element={<Controle />} />
@@ -24,6 +25,7 @@ function App() {
         <Route path="/faisabilite" element={<FaisabiliteAPS />} />
         <Route path="/execution" element={<Execution />} />
       </Routes>
+      </main>
       <Footer />
     </div>
   );

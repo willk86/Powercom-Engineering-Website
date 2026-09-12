@@ -1,7 +1,7 @@
-import { Activity, Menu, X } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Activity, Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -11,12 +11,12 @@ export function Navigation({ children }: LayoutProps) {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const links = [
-    { name: 'Accueil', path: '/' },
-    { name: 'Études', path: '/etudes' },
-    { name: 'Contrôle', path: '/controle' },
-    { name: 'Références', path: '/references' },
-    { name: 'Galerie', path: '/galerie' },
-    { name: 'Contact', path: '/contact' }
+    { name: "Accueil", path: "/" },
+    { name: "Études", path: "/etudes" },
+    { name: "Contrôle", path: "/controle" },
+    { name: "Références", path: "/references" },
+    { name: "Galerie", path: "/galerie" },
+    { name: "Contact", path: "/contact" },
   ];
 
   return (
@@ -37,10 +37,11 @@ export function Navigation({ children }: LayoutProps) {
             <Link
               key={link.path}
               to={link.path}
-              className={`transition ${location.pathname === link.path
-                ? 'text-blue-900'
-                : 'text-blue-900 hover:text-white'
-                }`}
+              className={`transition ${
+                location.pathname === link.path
+                  ? "text-blue-900"
+                  : "text-blue-900 hover:text-white"
+              }`}
             >
               {link.name}
             </Link>
@@ -65,7 +66,7 @@ export function Navigation({ children }: LayoutProps) {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`block py-2 text-blue-900 ${location.pathname === link.path ? 'font-bold' : 'hover:text-white'}`}
+                className={`block py-2 text-blue-900 ${location.pathname === link.path ? "font-bold" : "hover:text-white"}`}
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
